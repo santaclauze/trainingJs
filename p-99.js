@@ -176,4 +176,32 @@ function runLengthEncoder(list) {
 }
 
 var listExample7 = ['a','a','a','a','b','c','c','a','a','d','e','e','e','e'];
-runLengthEncoder(listExample7)
+runLengthEncoder(listExample7);
+
+
+// 8.  Given a run-length code list generated as specified in problem 7. Construct its uncompressed version.
+	/*
+	 	Example:
+	 	[ [ 'a', 4 ], [ 'b' ], [ 'c', 2 ], [ 'a', 2 ], [ 'd' ], [ 'e', 4 ] ]
+		result =['a','a','a','a','b','c','c','a','a','d','e','e','e','e']
+	*/
+function runLengthListDecompressor(list) {
+	var decompressedSublist = [];
+	for (var i = 0; i < list.length; i++) {
+		if(list[i].length != 1) {
+			var j = 0;
+			while(j<list[i][1]) {
+				decompressedSublist.push(list[i][0])
+				j++
+			}
+		} else {
+			decompressedSublist.push(list[i].toString())
+		}
+	}
+	console.log("EX 8: list decompressed form a run-length encoded list: ")
+	console.log(decompressedSublist)
+
+}
+
+var listExample8 = [[ 'a', 4 ], [ 'b' ], [ 'c', 2 ], [ 'a', 2 ], [ 'd' ], [ 'e', 4 ]];
+runLengthListDecompressor(listExample8);
