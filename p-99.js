@@ -1,6 +1,12 @@
 // Exercises found on https://sites.google.com/site/prologsite/prolog-problems
 
 // 1. Find the last element of a list.
+	/*
+	 	Example:
+		['a','b','c','d'].
+		result = d
+	*/
+
 function lastListElement(list) {
 	// -1 to match list numbering starting from 0 not 1;
 	var listLength = list.length - 1;
@@ -11,6 +17,11 @@ console.log("EX 1: the last element of the list is: " + lastListElement(listExam
 
 
 // 2.   Find the K'th element of a list.
+	/*
+	 	Example:
+		['a','b','c','d'], 3.
+		result = c
+	*/
 function elementPositionInList(list, position) {
 	// -1 to match list numbering starting from 0 not 1;
 	var arrayPosition = position - 1;
@@ -21,6 +32,11 @@ console.log("EX 2: the last element of the list is: " + elementPositionInList(li
 
 
 // 3.   Find out whether a list is a palindrome.
+	/*
+	 	Example:
+		['b','a','a','b'].
+		result = true
+	*/
 function isPalindrome(arg) {
 	var argumentAsList;
 	// prepare argument into array if it is a string.
@@ -54,7 +70,11 @@ isPalindrome(listExample3)
 
 
 // 4.  Flatten a nested list structure.
-
+	/*
+	 	Example:
+		['a', ['b', ['c', 'd'], ['a'], 'e']].
+		result = ['a','b','c','d','a','e']
+	*/
 function flattenNestedLists(list) {
 	var flatList = [];
 	var recursiveFlattener = function(list) {
@@ -77,7 +97,11 @@ flattenNestedLists(listExample4)
 
 
 // 5.  Eliminate consecutive duplicates of list elements.
-
+	/*
+	 	Example:
+		['a','a','a','a','b','e','e','c','c','a','a','e','e','c','c','c','c','c','c','d','e','e','e','e','e','e','e','e','e','e','e','e']
+		result = [ 'a', 'b', 'e', 'c', 'a', 'e', 'c', 'd', 'e' ]
+	*/
 var listExample5 = ['a','a','a','a','b','e','e','c','c','a','a','e','e','c','c','c','c','c','c','d','e','e','e','e','e','e','e','e','e','e','e','e'];
 
 function consecutiveDuplicatesExterminator(list) {
@@ -95,7 +119,11 @@ function consecutiveDuplicatesExterminator(list) {
 consecutiveDuplicatesExterminator(listExample5)
 
 // 6.  Pack consecutive duplicates of list elements into sublists.
-
+	/*
+	 	Example:
+		['a','a','a','a','b','c','c','a','a','d','e','e','e','e'].
+		result = [ [ 'a', 'a', 'a', 'a' ], [ 'b' ], [ 'c', 'c' ], [ 'a', 'a' ], [ 'd' ], [ 'e', 'e', 'e', 'e' ] ]
+	*/
 
 function nestingDuplicates(list) {
 	var nestedList = [];
@@ -117,7 +145,11 @@ var listExample6 = ['a','a','a','a','b','c','c','a','a','d','e','e','e','e'];
 nestingDuplicates(listExample6)
 
 // 7.  Run-length encoding of a list.
-
+	/*
+	 	Example:
+		['a','a','a','a','b','c','c','a','a','d','e','e','e','e']
+		result = [ [ 'a', 4 ], [ 'b' ], [ 'c', 2 ], [ 'a', 2 ], [ 'd' ], [ 'e', 4 ] ]
+	*/
 function runLengthEncoder(list) {
 	var runLengthEncodedList = [];
 	var unit = [];
