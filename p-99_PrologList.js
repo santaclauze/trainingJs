@@ -1,6 +1,7 @@
 // Exercises found on https://sites.google.com/site/prologsite/prolog-problems
+// 1. Prolog Lists
 
-// 1. Find the last element of a list.
+// 1.1 Find the last element of a list.
 	/*
 	 	Example:
 		['a','b','c','d'].
@@ -16,7 +17,7 @@ var listExample1 = ['a','b','c','d'];
 console.log("EX 1: the last element of the list is: " + lastListElement(listExample1));
 
 
-// 2.   Find the K'th element of a list.
+// 1.2  Find the K'th element of a list.
 	/*
 	 	Example:
 		['a','b','c','d'], 3.
@@ -31,7 +32,7 @@ var listExample2 = ['a','b','c','d'];
 console.log("EX 2: the last element of the list is: " + elementPositionInList(listExample2, 3));
 
 
-// 3.   Find out whether a list is a palindrome.
+// 1.3   Find out whether a list is a palindrome.
 	/*
 	 	Example:
 		['b','a','a','b'].
@@ -69,7 +70,7 @@ var listExample3 = ['b','a','a','b'];
 isPalindrome(listExample3)
 
 
-// 4.  Flatten a nested list structure.
+// 1.4  Flatten a nested list structure.
 	/*
 	 	Example:
 		['a', ['b', ['c', 'd'], ['a'], 'e']].
@@ -96,7 +97,7 @@ var listExample4 = ['a', ['b', ['c', 'd'], ['a'], 'e']];
 flattenNestedLists(listExample4)
 
 
-// 5.  Eliminate consecutive duplicates of list elements.
+// 1.5  Eliminate consecutive duplicates of list elements.
 	/*
 	 	Example:
 		['a','a','a','a','b','e','e','c','c','a','a','e','e','c','c','c','c','c','c','d','e','e','e','e','e','e','e','e','e','e','e','e']
@@ -118,7 +119,7 @@ function consecutiveDuplicatesExterminator(list) {
 
 consecutiveDuplicatesExterminator(listExample5)
 
-// 6.  Pack consecutive duplicates of list elements into sublists.
+// 1.6  Pack consecutive duplicates of list elements into sublists.
 	/*
 	 	Example:
 		['a','a','a','a','b','c','c','a','a','d','e','e','e','e'].
@@ -144,7 +145,7 @@ var listExample6 = ['a','a','a','a','b','c','c','a','a','d','e','e','e','e'];
 
 nestingDuplicates(listExample6)
 
-// 7.  Run-length encoding of a list.
+// 1.7  Run-length encoding of a list.
 	/*
 	 	Example:
 		['a','a','a','a','b','c','c','a','a','d','e','e','e','e']
@@ -179,7 +180,7 @@ var listExample7 = ['a','a','a','a','b','c','c','a','a','d','e','e','e','e'];
 runLengthEncoder(listExample7);
 
 
-// 8.  Given a run-length code list generated as specified in problem 7. Construct its uncompressed version.
+// 1.8  Given a run-length code list generated as specified in problem 7. Construct its uncompressed version.
 	/*
 	 	Example:
 	 	[ [ 'a', 4 ], [ 'b' ], [ 'c', 2 ], [ 'a', 2 ], [ 'd' ], [ 'e', 4 ] ]
