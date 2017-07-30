@@ -166,6 +166,7 @@ function runLengthEncoder(list) {
 			unit.push(runLengthCounter)
 		} else {
 			unit.push(list[i])
+			unit.push(runLengthCounter)
 		}
 		var coupledUnitCounter = unit.splice(0,2)
 		runLengthEncodedList.push(coupledUnitCounter)
@@ -173,7 +174,6 @@ function runLengthEncoder(list) {
 	}
 	console.log("EX 7: list with run-length encoded is: ")
 	console.log(runLengthEncodedList)
-
 }
 
 var listExample7 = ['a','a','a','a','b','c','c','a','a','d','e','e','e','e'];
