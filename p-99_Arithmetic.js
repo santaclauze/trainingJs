@@ -119,3 +119,68 @@ function goldbach(number) {
 }
 
 goldbach(28)
+
+
+// 2.5 A list of Goldbach compositions.
+// 2.5.a Given a range of integers by its lower and upper limit, print a list of all even numbers and their Goldbach composition.
+	/*
+		Example:
+		goldbachList(9,20).
+		result = 
+			10 = 3 + 7
+			12 = 5 + 7
+			14 = 3 + 11
+			16 = 3 + 13
+			18 = 5 + 13
+			20 = 3 + 17
+	*/
+
+
+function goldbachList(startingNumber, endNumber, smallestPrime = 3) {
+	var evenNumbers = [];
+	var goldbachListSums = [];
+	// find even numbers between starting and ending number
+	for (var i = startingNumber; i <= endNumber; i++) {
+		if(i % 2 == 0) {
+			evenNumbers.push(i)
+		}
+	}
+	// list of prime numbers for all even numbers
+	for (var i = 0; i < evenNumbers.length; i++) {
+		var primeList = [];
+		// j equals the smallestPrime so that we can set it if needed
+		for (var j = smallestPrime; j < evenNumbers[i]; j++) {
+			if(isPrime(j) === true) {
+				primeList.push(j)
+			}
+		}
+		// function that calls itself so that it returns the first valid sum of prim numbers rather than all the possobilities for each even number
+		(function(){
+			for (var k = 0; k < primeList.length; k++) {
+				for (var l = 0; l < primeList.length; l++) {
+					if(primeList[k]+primeList[l] === evenNumbers[i]) {
+						return console.log('EX 2.5.a: ' ,evenNumbers[i], '=', primeList[k], '+', primeList[l])
+					}
+				}
+			}
+
+		})();
+	}
+}
+
+goldbachList(9, 20)
+
+
+// 2.5.b In most cases, if an even number is written as the sum of two prime numbers, one of them is very small. 
+// Very rarely, the primes are both bigger than say 50. Try to find out how many such cases there are in the range 2..3000.
+	/*
+		Example:
+		goldbachList(1,2000,50).
+		result = 
+			992 = 73 + 919
+			1382 = 61 + 1321
+			1856 = 67 + 1789
+			1928 = 61 + 1867
+	*/
+
+goldbachList(1, 2000, 50)
